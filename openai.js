@@ -1,6 +1,12 @@
+const { OpenAIAPIKey } = require('./config'); // Create config.js with your API key
+
 class OpenAIAPI {
     static async generateResponse(userMessage, conversationHistory = []) {
+        
+        // const apiKey = OpenAIAPIKey;
+        // LAB TEST
         const apiKey = process.env.OPENAI_API_KEY;
+
         const endpoint = 'https://api.openai.com/v1/chat/completions';
         const response = await fetch(endpoint, {
             method: 'POST',

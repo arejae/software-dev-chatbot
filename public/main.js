@@ -1,5 +1,13 @@
 const chatLog = document.getElementById('chat-log');
 const userInput = document.getElementById('user-input');
+
+
+function detectEnter(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+}
+
 function sendMessage() {
     const message = userInput.value;
     // Display user's message
